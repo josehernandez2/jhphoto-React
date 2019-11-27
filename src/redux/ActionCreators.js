@@ -1,0 +1,164 @@
+import * as ActionTypes from './ActionTypes';
+import {baseUrl} from '../shared/baseUrl';
+
+// Portraits Actions
+
+export const fetchPortraits = () => (dispatch) => {
+  dispatch(portraitsLoading(true));
+  return fetch(baseUrl + 'portraits')
+      .then((response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error('Error ' +
+          response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        const errmess = new Error(error.message);
+        throw errmess;
+      })
+      .then((response) => response.json())
+      .then((portraits) => dispatch(addPortraits(portraits)))
+      .catch((error) => dispatch(portraitsFailed(error.message)));
+};
+
+export const portraitsLoading = () => ({
+  type: ActionTypes.PORTRAITS_LOADING,
+});
+
+export const portraitsFailed = (errmess) => ({
+  type: ActionTypes.PORTRAITS_FAILED,
+  payload: errmess,
+});
+
+export const addPortraits = (portraits) => ({
+  type: ActionTypes.ADD_PORTRAITS,
+  payload: portraits,
+});
+
+// Landscapes Actions
+
+export const fetchLandscapes = () => (dispatch) => {
+  dispatch(landscapesLoading(true));
+  return fetch(baseUrl + 'landscapes')
+      .then((response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error('Error ' +
+          response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        const errmess = new Error(error.message);
+        throw errmess;
+      })
+      .then((response) => response.json())
+      .then((landscapes) => dispatch(addLandscapes(landscapes)))
+      .catch((error) => dispatch(landscapesFailed(error.message)));
+};
+
+export const landscapesLoading = () => ({
+  type: ActionTypes.LANDSCAPES_LOADING,
+});
+
+export const landscapesFailed = (errmess) => ({
+  type: ActionTypes.LANDSCAPES_FAILED,
+  payload: errmess,
+});
+
+export const addLandscapes = (landscapes) => ({
+  type: ActionTypes.ADD_LANDSCAPES,
+  payload: landscapes,
+});
+
+// Wildlife Actions
+
+export const fetchWildlife = () => (dispatch) => {
+  dispatch(wildlifeLoading(true));
+  return fetch(baseUrl + 'wildlife')
+      .then((response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error('Error ' +
+          response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        const errmess = new Error(error.message);
+        throw errmess;
+      })
+      .then((response) => response.json())
+      .then((wildlife) => dispatch(addWildlife(wildlife)))
+      .catch((error) => dispatch(wildlifeFailed(error.message)));
+};
+
+export const wildlifeLoading = () => ({
+  type: ActionTypes.WILDLIFE_LOADING,
+});
+
+export const wildlifeFailed = (errmess) => ({
+  type: ActionTypes.WILDLIFE_FAILED,
+  payload: errmess,
+});
+
+export const addWildlife = (wildlife) => ({
+  type: ActionTypes.ADD_WILDLIFE,
+  payload: wildlife,
+});
+
+// Feedback Form Action
+
+export const postFeedback = (firstname,
+    lastname, telnum, email, agree, contactType, message) => (dispatch) => {
+  const newFeedback = {
+    firstname: firstname,
+    lastname: lastname,
+    telnum: telnum,
+    email: email,
+    agree: agree,
+    contactType: contactType,
+    message: message,
+  };
+
+  return fetch(baseUrl + 'feedback', {
+    method: 'POST',
+    body: JSON.stringify(newFeedback),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    credentials: 'same-origin',
+  })
+      .then((response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error('Error ' +
+          response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        const errmess = new Error(error.message);
+        throw errmess;
+      })
+      .then((response) => response.json())
+      .then((response) => dispatch(addFeedback(response)))
+      .then((response) => alert('Thank you for your feedback!'))
+      .catch((error) => {console.log('Post Feedback', error.message);
+        alert('Your feedback could not be posted\nError: ' + error.message); });
+};
+
+export const addFeedback = (feedback) => ({
+  type: ActionTypes.ADD_FEEDBACK,
+  payload: feedback,
+});
