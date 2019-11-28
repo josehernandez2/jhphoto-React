@@ -1,7 +1,6 @@
 import React from 'react';
 import {Loading} from './LoadingComponent';
 import {HomeCarousel} from './CarouselComponent';
-import {baseUrl} from '../shared/baseUrl';
 import {FadeTransform} from 'react-animation-components';
 
 function RenderCarousel({item, isLoading, errMess}) {
@@ -28,10 +27,13 @@ function Home(props) {
     <div className="container">
       <div className="row">
         <div className="col-6">
-          <RenderCarousel item={}
-            isLoading={}
+          <RenderCarousel item={props.items}
+            isLoading={props.carouselLoading}
+            errMes={props.carouselErrMess}/>
         </div>
       </div>
     </div>
   );
 }
+
+export default Home;
