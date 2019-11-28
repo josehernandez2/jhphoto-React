@@ -21,7 +21,7 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <Navbar dark expand="md">
+        <Navbar expand="md">
           <div className="container">
             <NavbarToggler onClick={this.toggleNav} />
             <NavbarBrand className="mr-auto" href="/">
@@ -29,7 +29,7 @@ class Header extends React.Component {
                 alt="Jose Hernandez II photography logo" />
             </NavbarBrand>
             <Collapse isOpen={this.state.isNavOpen} navbar>
-              <Nav navbar>
+              <Nav className="ml-auto" navbar>
                 <NavItem>
                   <NavLink className="nav-link" to="/home">
                     <span className="fa fa-home fa-lg"></span> Home
@@ -37,12 +37,12 @@ class Header extends React.Component {
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/photos">
-                    <span className="fas fa-camera-retro fa-lg"></span> Photos
+                    <span className="fa fa-camera-retro fa-lg"></span> Photos
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/contact">
-                    <span className="fas fa-envelope fa-lg"></span> Contact
+                    <span className="fa fa-envelope fa-lg"></span> Contact
                   </NavLink>
                 </NavItem>
                 <NavItem>
