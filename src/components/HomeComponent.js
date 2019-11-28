@@ -31,6 +31,15 @@ function Home(props) {
             isLoading={props.carouselLoading}
             errMes={props.carouselErrMess}/>
         </div>
+        <div className="col-6">
+          <p>Photography takes an instant out of time,
+             altering life by holding it still. Taking pictures is savoring life
+              intensely, every hundredth of a second. The best thing about a
+               picture is that it never changes, even when the people in it do.
+                What I like about photographs is that they capture a moment
+                 that's gone forever, impossible to reproduce.
+          </p>
+        </div>
       </div>
     </div>
   );
