@@ -5,7 +5,7 @@ export const Loading = () => {
     <div className="col-12">
       <div className="row">
         <span
-          className="fa fa-sync-alt fa-pulse fa-3x fa-fw text-primary">
+          className="fa fa-circle-o-notch fa-spin fa-3x fa-fw text-primary">
         </span>
       </div>
     </div>
