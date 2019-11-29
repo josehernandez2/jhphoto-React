@@ -20,3 +20,7 @@
   transform: translateX(100%);
   transition: all 300ms ease-out;
 }
+
+.carousel-img {
+  width: 100%;
+}
