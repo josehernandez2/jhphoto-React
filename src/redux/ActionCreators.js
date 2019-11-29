@@ -5,7 +5,7 @@ import {baseUrl} from '../shared/baseUrl';
 
 export const fetchPortraits = () => (dispatch) => {
   dispatch(portraitsLoading(true));
-  return fetch(baseUrl + 'portraits')
+  return fetch(baseUrl + 'photos')
       .then((response) => {
         if (response.ok) {
           return response;
@@ -21,6 +21,7 @@ export const fetchPortraits = () => (dispatch) => {
         throw errmess;
       })
       .then((response) => response.json())
+      .then((response) => response.portraits)
       .then((portraits) => dispatch(addPortraits(portraits)))
       .catch((error) => dispatch(portraitsFailed(error.message)));
 };
@@ -43,7 +44,7 @@ export const addPortraits = (portraits) => ({
 
 export const fetchLandscapes = () => (dispatch) => {
   dispatch(landscapesLoading(true));
-  return fetch(baseUrl + 'landscapes')
+  return fetch(baseUrl + 'photos')
       .then((response) => {
         if (response.ok) {
           return response;
@@ -59,6 +60,7 @@ export const fetchLandscapes = () => (dispatch) => {
         throw errmess;
       })
       .then((response) => response.json())
+      .then((response) => response.landscapes)
       .then((landscapes) => dispatch(addLandscapes(landscapes)))
       .catch((error) => dispatch(landscapesFailed(error.message)));
 };
@@ -81,7 +83,7 @@ export const addLandscapes = (landscapes) => ({
 
 export const fetchWildlife = () => (dispatch) => {
   dispatch(wildlifeLoading(true));
-  return fetch(baseUrl + 'wildlife')
+  return fetch(baseUrl + 'photos')
       .then((response) => {
         if (response.ok) {
           return response;
@@ -97,6 +99,7 @@ export const fetchWildlife = () => (dispatch) => {
         throw errmess;
       })
       .then((response) => response.json())
+      .then((response) => response.wildlife)
       .then((wildlife) => dispatch(addWildlife(wildlife)))
       .catch((error) => dispatch(wildlifeFailed(error.message)));
 };
