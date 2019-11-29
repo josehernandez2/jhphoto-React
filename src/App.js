@@ -13,7 +13,7 @@ class App extends React.Component {
       <Provider store={store}>
         <BrowserRouter>
           <div className="App">
-            <Main />
+            <Main className="main" />
           </div>
         </BrowserRouter>
       </Provider>
