@@ -14,10 +14,12 @@ function RenderCarousel({item, isLoading, errMess}) {
     );
   } else {
     return (
-      <FadeTransform
-        in transformProps={{exitTransform: 'scale(0.5) translateY(-50%)'}}>
-        <HomeCarousel items={item}/>
-      </FadeTransform>
+      <div className="col-12">
+        <FadeTransform
+          in transformProps={{exitTransform: 'scale(0.5) translateY(-50%)'}}>
+          <HomeCarousel items={item}/>
+        </FadeTransform>
+      </div>
     );
   }
 }
@@ -26,12 +28,10 @@ function Home(props) {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-6">
-          <RenderCarousel item={props.items}
-            isLoading={props.carouselLoading}
-            errMes={props.carouselErrMess}/>
-        </div>
-        <div className="col-6">
+        <RenderCarousel item={props.items}
+          isLoading={props.carouselLoading}
+          errMes={props.carouselErrMess}/>
+        <div className="col-12">
           <p>Photography takes an instant out of time,
              altering life by holding it still. Taking pictures is savoring life
               intensely, every hundredth of a second. The best thing about a
