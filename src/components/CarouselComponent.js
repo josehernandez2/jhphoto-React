@@ -37,7 +37,7 @@ export const HomeCarousel = (props) => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={baseUrl + item.src} alt={item.altText} />
+        <img src={baseUrl + item.src} alt={item.altText} className="carousel-img" />
       </CarouselItem>
     );
   });
