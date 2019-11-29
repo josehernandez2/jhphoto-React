@@ -6,7 +6,11 @@ import {FadeTransform} from 'react-animation-components';
 function RenderCarousel({item, isLoading, errMess}) {
   if (isLoading) {
     return (
-      <Loading />
+      <>
+        <div className="col-4"></div>
+        <Loading />
+        <div className="col-4"></div>
+      </>
     );
   } else if (errMess) {
     return (
