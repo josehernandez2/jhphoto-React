@@ -59,7 +59,7 @@ class Header extends React.Component {
             <div className="row row-header">
               <div className="col-12 col-sm-6">
                 <h1>Portfolio of Jose Hernandez II</h1>
-                <p>Clean, contemporary photography</p>
+                <p>Natural, contemporary photography</p>
               </div>
             </div>
           </div>
