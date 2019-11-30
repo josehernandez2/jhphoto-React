@@ -8,6 +8,7 @@ import Portraits from './PortraitsComponent';
 import Landscapes from './LandscapesComponent';
 import Wildlife from './WildlifeComponent';
 import Contact from './ContactComponent';
+import About from './AboutComponent';
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {actions} from 'react-redux-form';
@@ -121,6 +122,7 @@ class Main extends React.Component {
                 <Contact
                   postMessage={this.props.postMessage}
                   resetMessageForm={this.props.resetMessageForm} />} />
+              <Route exact path="/about" component={() => <About />} />
               <Redirect to='/home' />
             </Switch>
           </CSSTransition>
