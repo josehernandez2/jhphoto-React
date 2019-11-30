@@ -25,8 +25,8 @@ class Header extends React.Component {
           <div className="container">
             <NavbarToggler onClick={this.toggleNav} />
             <NavbarBrand className="mr-auto" href="/">
-              <img src="assets/images/logo.png" height="41" width="41"
-                alt="Jose Hernandez II photography logo" />
+              <img src="assets/images/logo.png" height="64" width="64"
+                alt="logo" />
             </NavbarBrand>
             <Collapse isOpen={this.state.isNavOpen} navbar>
               <Nav className="ml-auto" navbar>

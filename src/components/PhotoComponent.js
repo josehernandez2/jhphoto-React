@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import {Card, CardHeader, CardBody, CardText,
   Breadcrumb, BreadcrumbItem, Button} from 'reactstrap';
@@ -19,16 +20,19 @@ function RenderCard({item, cardIsLoading, errMess}) {
     return (
       <div className="col-12 col-md m-1">
         <FadeTransform in
-          transformProps={{exitTransform: 'scale(0.5) translateY(-50%)'}}>
+          transformProps={{exitTransform: 'scale(0.0) translateY(-50%)'}}>
           <Card>
             <CardHeader
-              className="text-center" tag="h3">{item.category}
+              className="text-center"
+              tag="h3">{item.category}
             </CardHeader>
-            <img width="100%"
-              src={baseUrl + item.image} alt={item.description} />
+            <img
+              width="100%"
+              src={baseUrl + item.image}
+              alt={item.description} />
             <CardBody className="text-center">
               <CardText>{item.quote}</CardText>
-              <Link to={'/photos/${item.category}'}>
+              <Link to={'/photos/' + item.category}>
                 <Button>See More</Button>
               </Link>
             </CardBody>
@@ -48,13 +52,16 @@ function Photos(props) {
           <BreadcrumbItem active>Photos</BreadcrumbItem>
         </Breadcrumb>
         <div className="row mt-5">
-          <RenderCard item={props.portrait}
+          <RenderCard
+            item={props.portraitFeatured}
             cardIsLoading={props.portraitsLoading}
             errMess={props.portraitsErrMess} />
-          <RenderCard item={props.landscape}
+          <RenderCard
+            item={props.landscapeFeatured}
             cardIsLoading={props.landscapesLoading}
             errMess={props.landscapesErrMess} />
-          <RenderCard item={props.wildlife}
+          <RenderCard
+            item={props.wildlifeFeatured}
             cardIsLoading={props.wildlifeLoading}
             errMess={props.wildlifeErrMess} />
         </div>
