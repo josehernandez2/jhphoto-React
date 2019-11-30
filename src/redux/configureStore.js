@@ -6,7 +6,7 @@ import {Items} from './items';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import {createForms} from 'react-redux-form';
-import {InitialFeedback} from './forms';
+import {InitialMessage} from './forms';
 
 export const ConfigureStore = () => {
   const store = createStore(
@@ -16,7 +16,7 @@ export const ConfigureStore = () => {
         wildlife: Wildlife,
         items: Items,
         ...createForms({
-          feedback: InitialFeedback,
+          message: InitialMessage,
         }),
       }),
       applyMiddleware(thunk, logger),
