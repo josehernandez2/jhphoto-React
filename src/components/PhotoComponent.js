@@ -18,22 +18,22 @@ function RenderCard({item, cardIsLoading, errMess}) {
     );
   } else {
     return (
-      <div className="col-12 col-md m-1">
+      <div className="col-12 col-md m-2">
         <FadeTransform in
           transformProps={{exitTransform: 'scale(0.0) translateY(-50%)'}}>
-          <Card>
+          <Card className="card">
             <CardHeader
-              className="text-center"
+              className="text-center card-header"
               tag="h3">{item.category}
             </CardHeader>
             <img
               width="100%"
               src={baseUrl + item.image}
               alt={item.description} />
-            <CardBody className="text-center">
-              <CardText>{item.quote}</CardText>
+            <CardBody className="text-center card-body">
+              <CardText className="card-text">{item.quote}</CardText>
               <Link to={'/photos/' + item.category}>
-                <Button>See More</Button>
+                <Button className="button">See More</Button>
               </Link>
             </CardBody>
           </Card>
@@ -46,9 +46,10 @@ function RenderCard({item, cardIsLoading, errMess}) {
 function Photos(props) {
   return (
     <div className="container">
-      <div className="row mb-5">
+      <div className="row mb-4">
         <Breadcrumb>
-          <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+          <BreadcrumbItem>
+            <Link to="/home">Home</Link></BreadcrumbItem>
           <BreadcrumbItem active>Photos</BreadcrumbItem>
         </Breadcrumb>
         <div className="row mt-5">

@@ -26,13 +26,13 @@ function RenderCarousel({item, isLoading, errMess}) {
 
 function Home(props) {
   return (
-    <div className="container">
+    <div className="container-fluid home-container">
       <div className="row">
         <RenderCarousel item={props.items}
           isLoading={props.carouselLoading}
           errMes={props.carouselErrMess}/>
         <div className="col-12">
-          <p className="mt-5">Photography takes an instant out of time,
+          <p className="mt-5 home-p">Photography takes an instant out of time,
              altering life by holding it still. Taking pictures is savoring life
               intensely, every hundredth of a second. The best thing about a
                picture is that it never changes, even when the people in it do.

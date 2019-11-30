@@ -27,8 +27,10 @@ const RenderPhotos = (props) => {
                 alt={photos.name}
                 onClick={toggle} />
               <Collapse isOpen={isOpen}>
-                <h2>{photos.name}</h2>
-                <p>{photos.description}</p>
+                <div className="mt-2 mb-5">
+                  <h2>{photos.name}</h2>
+                  <p className="p-photos">{photos.description}</p>
+                </div>
               </Collapse>
             </Fade>
           );

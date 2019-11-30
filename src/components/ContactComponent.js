@@ -156,7 +156,7 @@ class Contact extends React.Component {
                         model=".agree"
                         name="agree"
                         className="form-check-input" /> {' '}
-                      <strong>May we contact you?</strong>
+                      <strong>May I contact you?</strong>
                     </Label>
                   </div>
                 </Col>
@@ -183,7 +183,7 @@ class Contact extends React.Component {
               </Row>
               <Row className="form-group">
                 <Col md={{size: 9, offset: 3}}>
-                  <Button type="submit" color="primary">
+                  <Button type="submit" className="button">
                     Send Message
                   </Button>
                 </Col>

@@ -55,9 +55,11 @@ export const HomeCarousel = (props) => {
         activeIndex={activeIndex} onClickHandler={goToIndex} />
       {slides}
       <CarouselControl direction="prev"
-        directionText="Previous" onClickHandler={previous} />
+        directionText="Previous"
+        onClickHandler={previous}/>
       <CarouselControl direction="next"
-        directionText="Next" onClickHandler={next} />
+        directionText="Next"
+        onClickHandler={next}/>
     </Carousel>
   );
 };
