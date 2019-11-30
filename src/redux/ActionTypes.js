@@ -13,3 +13,5 @@ export const WILDLIFE_FAILED = 'WILDLIFE_FAILED';
 export const ADD_ITEMS = 'ADD_ITEMS';
 export const ITEMS_LOADING = 'ITEMS_LOADING';
 export const ITEMS_FAILED = 'ITEMS_FAILED';
+
+export const ADD_MESSAGE = 'ADD_MESSAGE';
