@@ -1,6 +1,6 @@
 import React from 'react';
-import {Navbar, NavbarBrand, Nav, NavbarToggler, Collapse,
-  NavItem, Jumbotron} from 'reactstrap';
+import {Nav, Navbar, NavbarToggler, NavbarBrand, Collapse,
+  NavItem} from 'reactstrap';
 import {NavLink} from 'react-router-dom';
 
 class Header extends React.Component {
@@ -21,13 +21,14 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <Navbar expand="md">
+        <Navbar light expand="md">
           <div className="container">
-            <NavbarToggler onClick={this.toggleNav} />
             <NavbarBrand className="mr-auto" href="/">
               <img src="assets/images/logo.png" height="64" width="64"
                 alt="logo" />
             </NavbarBrand>
+            <NavbarToggler type="button"
+              className="custom-toggler" onClick={this.toggleNav} />
             <Collapse isOpen={this.state.isNavOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
@@ -54,16 +55,6 @@ class Header extends React.Component {
             </Collapse>
           </div>
         </Navbar>
-        <Jumbotron>
-          <div className="container">
-            <div className="row row-header">
-              <div className="col-12 col-sm-6">
-                <h1>Portfolio of Jose Hernandez II</h1>
-                <p>Natural, contemporary photography</p>
-              </div>
-            </div>
-          </div>
-        </Jumbotron>
       </div>
     );
   }
