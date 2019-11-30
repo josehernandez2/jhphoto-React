@@ -156,50 +156,57 @@ export const addItems = (items) => ({
   payload: items,
 });
 
-// Feedback Form Action
+// Message Form Action
 
-// export const postFeedback = (firstname,
-//     lastname, telnum, email, agree, contactType, message) => (dispatch) => {
-//   const newFeedback = {
-//     firstname: firstname,
-//     lastname: lastname,
-//     telnum: telnum,
-//     email: email,
-//     agree: agree,
-//     contactType: contactType,
-//     message: message,
-//   };
+export const postMessage= (
+    firstname,
+    lastname,
+    telnum,
+    email,
+    agree,
+    contactType,
+    message) => (dispatch) => {
+  const newMessage = {
+    firstname: firstname,
+    lastname: lastname,
+    telnum: telnum,
+    email: email,
+    agree: agree,
+    contactType: contactType,
+    message: message,
+  };
 
-//   return fetch(baseUrl + 'feedback', {
-//     method: 'POST',
-//     body: JSON.stringify(newFeedback),
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     credentials: 'same-origin',
-//   })
-//       .then((response) => {
-//         if (response.ok) {
-//           return response;
-//         } else {
-//           const error = new Error('Error ' +
-//           response.status + ': ' + response.statusText);
-//           error.response = response;
-//           throw error;
-//         }
-//       },
-//       (error) => {
-//         const errmess = new Error(error.message);
-//         throw errmess;
-//       })
-//       .then((response) => response.json())
-//       .then((response) => dispatch(addFeedback(response)))
-//       .then((response) => alert('Thank you for your feedback!'))
-//       .catch((error) => {console.log('Post Feedback', error.message);
-//         alert('Your feedback could not be posted\nError: ' + error.message); });
-// };
+  return fetch(baseUrl + 'message', {
+    method: 'POST',
+    body: JSON.stringify(newMessage),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    credentials: 'same-origin',
+  })
+      .then((response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error('Error ' +
+          response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        const errmess = new Error(error.message);
+        throw errmess;
+      })
+      .then((response) => response.json())
+      .then((response) => dispatch(addMessage(response)))
+      .then(alert('Thank you for your feedback!'))
+      .catch((error) => {
+        console.log('Post Message', error.message);
+        alert('Your Message could not be posted\nError: ' + error.message); });
+};
 
-// export const addFeedback = (feedback) => ({
-//   type: ActionTypes.ADD_FEEDBACK,
-//   payload: feedback,
-// });
+export const addMessage = (message) => ({
+  type: ActionTypes.ADD_MESSAGE,
+  payload: message,
+});
