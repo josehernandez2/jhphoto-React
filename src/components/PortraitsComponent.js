@@ -8,12 +8,17 @@ function Portraits(props) {
     isLoading={props.portraitsLoading}
     errMess={props.portraitsErrMess}/>;
   return (
-    <div className="container">
+    <div className="container photo-container">
       <div className="row">
         <Breadcrumb>
           <BreadcrumbItem><Link to="/photos">Photos</Link></BreadcrumbItem>
           <BreadcrumbItem active>Portraits</BreadcrumbItem>
         </Breadcrumb>
+      </div>
+      <div className="row">
+        <div className="col-12">
+          <p className="hidden">(Click For Details)</p>
+        </div>
       </div>
       <div className="row">
         <div className="col-12">
