@@ -17,7 +17,7 @@ function Portraits(props) {
       </div>
       <div className="row">
         <div className="col-12">
-          <p className="hidden">(Click For Details)</p>
+          <p className="hidden">(Click Photo For Details)</p>
         </div>
       </div>
       <div className="row">

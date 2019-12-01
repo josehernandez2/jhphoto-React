@@ -8,7 +8,7 @@ function Wildlife(props) {
     isLoading={props.wildlifeLoading}
     errMess={props.wildlifeErrMess}/>;
   return (
-    <div className="container">
+    <div className="container photo-container">
       <div className="row">
         <Breadcrumb>
           <BreadcrumbItem><Link to="/photos">Photos</Link></BreadcrumbItem>
@@ -17,7 +17,7 @@ function Wildlife(props) {
       </div>
       <div className="row">
         <div className="col-12">
-          <p className="hidden">(Click For Details)</p>
+          <p className="hidden">(Click Photo For Details)</p>
         </div>
       </div>
       <div className="row">
