@@ -5,7 +5,7 @@ import {baseUrl} from '../shared/baseUrl';
 
 export const fetchPortraits = () => (dispatch) => {
   dispatch(portraitsLoading(true));
-  return fetch(baseUrl + 'photos')
+  return fetch(baseUrl + 'db-jhphoto.json#')
       .then((response) => {
         if (response.ok) {
           return response;
@@ -21,6 +21,7 @@ export const fetchPortraits = () => (dispatch) => {
         throw errmess;
       })
       .then((response) => response.json())
+      .then((response) => response.photos)
       .then((response) => response.portraits)
       .then((portraits) => dispatch(addPortraits(portraits)))
       .catch((error) => dispatch(portraitsFailed(error.message)));
@@ -44,7 +45,7 @@ export const addPortraits = (portraits) => ({
 
 export const fetchLandscapes = () => (dispatch) => {
   dispatch(landscapesLoading(true));
-  return fetch(baseUrl + 'photos')
+  return fetch(baseUrl + 'db-jhphoto.json#')
       .then((response) => {
         if (response.ok) {
           return response;
@@ -60,6 +61,7 @@ export const fetchLandscapes = () => (dispatch) => {
         throw errmess;
       })
       .then((response) => response.json())
+      .then((response) => response.photos)
       .then((response) => response.landscapes)
       .then((landscapes) => dispatch(addLandscapes(landscapes)))
       .catch((error) => dispatch(landscapesFailed(error.message)));
@@ -83,7 +85,7 @@ export const addLandscapes = (landscapes) => ({
 
 export const fetchWildlife = () => (dispatch) => {
   dispatch(wildlifeLoading(true));
-  return fetch(baseUrl + 'photos')
+  return fetch(baseUrl + 'db-jhphoto.json#')
       .then((response) => {
         if (response.ok) {
           return response;
@@ -99,6 +101,7 @@ export const fetchWildlife = () => (dispatch) => {
         throw errmess;
       })
       .then((response) => response.json())
+      .then((response) => response.photos)
       .then((response) => response.wildlife)
       .then((wildlife) => dispatch(addWildlife(wildlife)))
       .catch((error) => dispatch(wildlifeFailed(error.message)));
@@ -122,7 +125,7 @@ export const addWildlife = (wildlife) => ({
 
 export const fetchItems = () => (dispatch) => {
   dispatch(itemsLoading(true));
-  return fetch(baseUrl + 'items')
+  return fetch(baseUrl + 'db-jhphoto.json#')
       .then((response) => {
         if (response.ok) {
           return response;
@@ -138,6 +141,7 @@ export const fetchItems = () => (dispatch) => {
         throw errmess;
       })
       .then((response) => response.json())
+      .then((response) => response.items)
       .then((items) => dispatch(addItems(items)))
       .catch((error) => dispatch(itemsFailed(error.message)));
 };
@@ -176,7 +180,7 @@ export const postMessage= (
     message: message,
   };
 
-  return fetch(baseUrl + 'message', {
+  return fetch(baseUrl + 'db-jhphoto.json#', {
     method: 'POST',
     body: JSON.stringify(newMessage),
     headers: {
@@ -199,6 +203,7 @@ export const postMessage= (
         throw errmess;
       })
       .then((response) => response.json())
+      .then((response) => response.message)
       .then((response) => dispatch(addMessage(response)))
       .then(alert('Thank you for your feedback!'))
       .catch((error) => {
