@@ -13,7 +13,7 @@ function About() {
       </div>
       <div className="row">
         <div className="col-12 col-md-6">
-          <img src="assets/images/self.jpg"
+          <img src='images/self.jpg'
             alt="Jose Hernandez"
             className="img-fluid"/>
         </div>

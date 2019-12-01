@@ -24,7 +24,7 @@ class Header extends React.Component {
         <Navbar light expand="md">
           <div className="container">
             <NavbarBrand className="mr-auto" href="/">
-              <img src="assets/images/logo.png" height="64" width="64"
+              <img src='images/logo.png' height="64" width="64"
                 alt="logo" />
             </NavbarBrand>
             <NavbarToggler type="button"
