@@ -205,7 +205,7 @@ export const postMessage= (
       .then((response) => response.json())
       .then((response) => response.message)
       .then((response) => dispatch(addMessage(response)))
-      .then(alert('Thank you for your feedback!'))
+      .then(alert('Thank you for your Message!'))
       .catch((error) => {
         console.log('Post Message', error.message);
         alert('Your Message could not be posted\nError: ' + error.message); });
