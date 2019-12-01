@@ -22,9 +22,7 @@ function Wildlife(props) {
       </div>
       <div className="row">
         <div className="col-12">
-          <ul>
-            {photoList}
-          </ul>
+          {photoList}
         </div>
       </div>
     </div>
