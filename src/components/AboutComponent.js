@@ -17,7 +17,7 @@ function About() {
             alt="Jose Hernandez"
             className="img-fluid"/>
         </div>
-        <div className="col-12 col-md-6 pl-lg-5 mt-sm-5">
+        <div className="col-12 mt-5 pl-4 pr-4 col-md-6 pl-md-5 pr-md-0 mt-md-0">
           <p>Hello! My name is Jose Hernandez II and welcome to my online
              portfolio. I've been a practicing freelance photographer in the
              Eastern Nebraska area for about half a decade now.</p>
