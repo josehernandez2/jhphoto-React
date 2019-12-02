@@ -183,7 +183,7 @@ class Contact extends React.Component {
               </Row>
               <Row className="form-group">
                 <Col md={{size: 9, offset: 3}}>
-                  <Button type="submit" className="button">
+                  <Button type="submit" className="submit-button">
                     Send Message
                   </Button>
                 </Col>
